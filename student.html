@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+<link rel="stylesheet" href="student.css">
+</head>
+
+<body>
+
+<h1>Student Portal</h1>
+
+<form onsubmit="return studentLogin()">
+
+<input type="text" id="name" placeholder="Student Name (first time only)">
+
+<input type="email" id="email" placeholder="College Email" required>
+
+<input type="password" id="password" placeholder="Password" required>
+
+<button type="submit">Login</button>
+
+<p id="msg"></p>
+
+</form>
+
+<script>
+
+function studentLogin(){
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let password = document.getElementById("password").value;
+let msg = document.getElementById("msg");
+
+let collegeDomain = "@vitapstudent.ac.in";
+
+/* check college email */
+
+if(!email.endsWith(collegeDomain)){
+
+msg.style.color="red";
+msg.innerHTML="Only college email allowed ❌";
+return false;
+
+}
+
+/* send data to server */
+
+fetch("http://localhost:3000/studentLogin",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+name:name,
+email:email,
+password:password
+})
+
+})
+
+.then(res=>res.json())
+
+.then(data=>{
+
+if(data.success){
+
+msg.style.color="green";
+msg.innerHTML=data.message;
+
+/* save name for dashboard */
+
+localStorage.setItem("studentName",data.studentName);
+
+/* SAVE EMAIL ALSO (IMPORTANT) */
+
+localStorage.setItem("studentEmail",email);
+
+/* redirect */
+
+setTimeout(()=>{
+
+window.location.href="StudentDashBoard.html";
+
+},1000);
+
+}
+else{
+
+msg.style.color="red";
+msg.innerHTML=data.message;
+
+}
+
+})
+
+.catch(err=>{
+
+msg.style.color="red";
+msg.innerHTML="Cannot connect to server ❌";
+
+})
+
+return false;
+
+}
+
+</script>
+
+</body>
+</html>

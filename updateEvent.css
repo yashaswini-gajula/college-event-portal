@@ -1,0 +1,93 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI", sans-serif;
+}
+
+body{
+min-height:100vh;
+background: linear-gradient(135deg,#667eea,#764ba2);
+font-family: "Segoe UI", sans-serif;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+padding-top:60px;
+}
+h1{
+color:white;
+
+font-size:36px;
+margin-bottom:10px;
+}
+
+.desc{
+color:white;
+font-size:16px;
+opacity:0.9;
+margin-bottom:40px;
+text-align:center;
+}
+/* event list container */
+#eventList{
+list-style:none;
+width:600px;
+padding:0;
+}
+
+/* event cards */
+#eventList li{
+background:white;
+padding:18px 25px;
+margin-bottom:20px;
+
+border-radius:12px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+transition:0.3s;
+}
+
+#eventList li:hover{
+transform:translateY(-5px);
+
+}
+
+/* event name */
+
+
+/* buttons */
+button{
+padding:8px 16px;
+border:none;
+border-radius:6px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+margin-left:10px;
+}
+
+/* edit button */
+button:first-of-type{
+background:#667eea;
+}
+
+/* delete button */
+button:last-of-type{
+background:#e74c3c;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* remove hr look */
+hr{
+display:none;
+}

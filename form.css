@@ -1,0 +1,97 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI", sans-serif;
+}
+
+/* page background */
+body{
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background: linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* form container */
+.form-box{
+width:420px;
+
+background:white;
+
+padding:30px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.3);
+
+transition:0.3s;
+}
+
+.form-box:hover{
+transform:translateY(-5px);
+box-shadow:0 25px 50px rgba(0,0,0,0.4);
+}
+
+/* title */
+.form-box h2{
+margin-bottom:20px;
+color:#667eea;
+}
+
+/* inputs */
+.form-box input{
+width:100%;
+
+padding:12px;
+
+margin:10px 0;
+
+border:1px solid #ddd;
+border-radius:6px;
+
+font-size:14px;
+
+transition:0.3s;
+}
+
+/* input focus effect */
+.form-box input:focus{
+outline:none;
+border-color:#667eea;
+box-shadow:0 0 5px rgba(102,126,234,0.5);
+}
+
+/* button */
+.form-box button{
+width:100%;
+
+padding:12px;
+
+margin-top:15px;
+
+border:none;
+border-radius:6px;
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+color:white;
+
+font-size:16px;
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+/* button hover */
+.form-box button:hover{
+transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}

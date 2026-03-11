@@ -1,0 +1,93 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Segoe UI", sans-serif;
+}
+
+body{
+min-height:100vh;
+background: linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+}
+
+/* Title */
+h1{
+text-align:center;
+padding:35px;
+font-size:38px;
+letter-spacing:1px;
+}
+
+/* Containers aligned horizontally */
+.container{
+display:flex;
+
+justify-content:center;
+gap:30px;
+margin:30px auto;
+}
+
+/* Dashboard cards */
+.card{
+background:white;
+color:black;
+
+width:260px;
+height:260px;
+
+border-radius:15px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+padding:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+
+transition:0.3s;
+}
+
+/* Hover animation */
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 25px 45px rgba(0,0,0,0.35);
+}
+
+/* Images */
+img{
+border-radius:10px;
+margin-bottom:10px;
+}
+
+/* Card title */
+.card h2{
+margin:8px 0;
+color:#667eea;
+}
+
+/* Button */
+button{
+margin-top:10px;
+
+padding:10px 18px;
+
+border:none;
+border-radius:6px;
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+
+font-weight:bold;
+cursor:pointer;
+
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}

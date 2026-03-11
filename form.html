@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Updation Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <!-- EVENT FORM (hidden initially) -->
+<div id="eventForm" class="form-box" >
+
+    <h2>Create Event</h2>
+
+    <input type="text" placeholder="Club Name" id="clubName">
+    <input type="text" placeholder="Event Name" id="eventName">
+    <input type="text" placeholder="Club Description" id="clubDesc">
+    <input type="text" placeholder="Event Description" id="eventDesc">
+    <input type="text" placeholder="Venue" id="venue">
+    <input type="date" id="date">
+    <input type="time" id="time">
+    <input type="url" placeholder="Registration Link" id="regLink">
+
+
+    <button onclick="submitEvent()">Submit Event</button>
+
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>

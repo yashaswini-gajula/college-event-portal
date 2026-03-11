@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="adminDashboard.css">
+
+</head>
+
+<body>
+
+<h1>Admin Dashboard</h1>
+
+<div class="cards">
+
+<div class="card" onclick="loadStudents()">
+<div class="icon">🎓</div>
+<h2>Students</h2>
+<p>View all registered students</p>
+</div>
+
+<div class="card" onclick="loadClubs()">
+<div class="icon">🏫</div>
+<h2>Clubs</h2>
+<p>View all club presidents</p>
+</div>
+
+<div class="card" onclick="loadEvents()">
+<div class="icon">🎉</div>
+<h2>Events</h2>
+<p>View all events created</p>
+</div>
+
+</div>
+
+<table id="dataTable"></table>
+
+<script>
+
+/* VIEW STUDENTS */
+
+function loadStudents(){
+
+fetch("http://localhost:3000/getStudents")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+let table="<tr><th>Name</th><th>Email</th></tr>";
+
+data.forEach(student=>{
+
+table+=`<tr>
+<td>${student.name}</td>
+<td>${student.email}</td>
+</tr>`;
+
+});
+
+document.getElementById("dataTable").innerHTML=table;
+
+});
+
+}
+
+
+/* VIEW CLUBS */
+
+function loadClubs(){
+
+fetch("http://localhost:3000/getClubs")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+let table="<tr><th>Club Email</th></tr>";
+
+data.forEach(club=>{
+
+table+=`<tr>
+<td>${club.email}</td>
+</tr>`;
+
+});
+
+document.getElementById("dataTable").innerHTML=table;
+
+});
+
+}
+
+
+/* VIEW EVENTS */
+
+function loadEvents(){
+
+fetch("http://localhost:3000/getEvents")
+
+.then(res=>res.json())
+
+.then(data=>{
+
+let table="<tr><th>Club</th><th>Event</th><th>Venue</th><th>Date</th></tr>";
+
+data.forEach(event=>{
+
+table+=`<tr>
+<td>${event.clubName}</td>
+<td>${event.eventName}</td>
+<td>${event.venue}</td>
+<td>${event.date}</td>
+</tr>`;
+
+});
+
+document.getElementById("dataTable").innerHTML=table;
+
+});
+
+}
+
+</script>
+
+</body>
+</html>

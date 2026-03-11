@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="updateEvent.css">
+</head>
+<body>
+    <h1>Update Club Events ✏️</h1>
+<p class="desc">
+Manage your club events here. You can edit event details or delete events that are no longer needed.
+</p>
+    <ul id="eventList"></ul>
+    <script>
+fetch("http://localhost:3000/getEvents")
+.then(res => res.json())
+.then(events => {
+    let list = document.getElementById("eventList");
+
+    events.forEach((event, index) => {
+    let li = document.createElement("li");
+
+    li.innerHTML = `
+        <strong>${event.eventName}</strong>
+        <button onclick="editEvent(${index})">Edit</button>
+        <button onclick="deleteEvent(${index})">Delete</button>
+        <hr>
+    `;
+
+    list.appendChild(li);
+});
+    
+});
+function editEvent(index) {
+    localStorage.setItem("editIndex", index);
+    window.location.href = "editForm.html";
+}
+function deleteEvent(index) {
+    if (!confirm("Delete this event?")) return;
+
+    fetch(`http://localhost:3000/deleteEvent/${index}`, {
+        method: "DELETE"
+    })
+    .then(res => res.text())
+    .then(msg => {
+        alert(msg);
+        location.reload();
+    })
+    .catch(err => {
+        console.log(err);
+        alert("Delete failed ❌");
+    });
+}
+</script>
+
+    
+</body>
+</html>

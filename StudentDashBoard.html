@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="studentDashboard.css">
+</head>
+
+<body>
+
+<h1 id="welcome">Welcome 🎓</h1>
+
+<div class="container">
+
+<div class="card">
+<h2>Upcoming Events</h2>
+<ul id="eventList"></ul>
+</div>
+
+<div class="card">
+
+<h2>My Registered Events</h2>
+
+<ul id="myEvents"></ul>
+
+</div>
+
+<div class="card">
+<h2>Notifications 🔔</h2>
+<p>No new notifications</p>
+</div>
+
+</div>
+
+<!-- <script>
+
+// Get student name from login
+const name = localStorage.getItem("studentName");
+
+// Show name on dashboard
+document.getElementById("welcome").innerText = "Welcome " + name + " 🎓";
+
+</script> -->
+
+<script src="StudentDashBoard.js"></script>
+
+</body>
+</html>

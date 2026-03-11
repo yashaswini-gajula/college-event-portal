@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Dashboard</title>
+    <link rel="stylesheet" href="clubDashboard.css">
+</head>
+<body>
+
+<h1>Club President Dashboard 🏆</h1>
+
+<div class="container">
+
+    <div class="card">
+        <img src="plus symbol.jpeg" alt="Upload Event" height="100" width="100">
+        <h2>Upload an Event</h2>
+        <p>Create and publish a new club event for students.</p>
+        <button onclick="showForm()">Upload Event</button>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <img src="update evnt.jpeg" alt="Update Event" height="100" width="100">
+        <h2>Update an Event</h2>
+        <p>Update event Details</p>
+        <button onclick="UpdateEvent()">Update Event</button>
+    </div>
+
+</div>
+
+
+
+<script>
+function showForm() {
+     window.location.href = "form.html";
+}
+function UpdateEvent(){
+    window.location.href = "updateEvent.html";
+}
+
+</script>
+
+</body>
+</html>
