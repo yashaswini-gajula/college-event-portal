@@ -63,7 +63,7 @@ function registerEvent(eventId){
 
 let studentEmail = localStorage.getItem("studentEmail");
 
-fetch("/registerEvent",{
+fetch("https://college-event-portal-hrt9.onrender.com/registerEvent",{
 
 method:"POST",
 
