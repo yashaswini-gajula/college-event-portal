@@ -1,4 +1,3 @@
-
 /* ---------------- WELCOME NAME ---------------- */
 
 const name = localStorage.getItem("studentName");
@@ -6,7 +5,6 @@ const name = localStorage.getItem("studentName");
 if(name){
 document.getElementById("welcome").innerText = "Welcome " + name + " 🎓";
 }
-
 
 /* ---------------- LOAD EVENTS ---------------- */
 
@@ -36,15 +34,9 @@ Date: ${event.date}<br>
 
 Time: ${event.time}<br>
 
-<p id="count-${event._id}"></p>
-
-<button onclick="registerEvent('${event._id}')">
+<p id="count-${event._id}"></p><button onclick="registerEvent('${event._id}')">
 Register Here
-</button>
-
-<hr>
-
-`;
+</button><hr>`;
 
 list.appendChild(li);
 
@@ -55,7 +47,6 @@ loadCount(event._id);
 });
 
 });
-
 
 /* ---------------- REGISTER EVENT ---------------- */
 
@@ -92,17 +83,15 @@ loadCount(eventId);
 
 loadMyEvents();
 
-
 });
 
 }
-
 
 /* ---------------- LOAD REGISTRATION COUNT ---------------- */
 
 function loadCount(eventId){
 
-fetch("https://college-event-portal-hrt9.onrender.com/"+eventId)
+fetch("https://college-event-portal-hrt9.onrender.com/eventCount/"+eventId)
 
 .then(res=>res.json())
 
@@ -121,7 +110,7 @@ function loadMyEvents(){
 
 let email = localStorage.getItem("studentEmail");
 
-fetch("https://college-event-portal-hrt9.onrender.com/"+email)
+fetch("https://college-event-portal-hrt9.onrender.com/myEvents/"+email)
 
 .then(res=>res.json())
 
@@ -147,16 +136,16 @@ li.innerHTML=`
 Club: ${event.clubName}<br>
 Date: ${event.date}<br>
 Venue: ${event.venue}
-<hr>
-`;
 
-myList.appendChild(li);
+<hr>
+`;myList.appendChild(li);
 
 });
 
 });
 
 }
+
 /* ---------------- CALL WHEN PAGE LOADS ---------------- */
 
 loadMyEvents();
