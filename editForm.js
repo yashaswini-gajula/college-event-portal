@@ -1,7 +1,7 @@
 // Load existing event data
 let index = localStorage.getItem("editIndex");
 
-fetch("http://localhost:3000/getEvents")
+fetch("https://college-event-portal-hrt9.onrender.com/getEvents")
 .then(res => res.json())
 .then(events => {
     let event = events[index];
@@ -36,7 +36,7 @@ function updateEvent() {
     
     };
 
-    fetch(`http://localhost:3000/updateEvent/${index}`, {
+    fetch(`https://college-event-portal-hrt9.onrender.com/updateEvent/${index}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedEvent)

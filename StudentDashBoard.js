@@ -10,7 +10,7 @@ document.getElementById("welcome").innerText = "Welcome " + name + " 🎓";
 
 /* ---------------- LOAD EVENTS ---------------- */
 
-fetch("http://localhost:3000/getEvents")
+fetch("https://college-event-portal-hrt9.onrender.com/getEvents")
 
 .then(res => res.json())
 
@@ -63,7 +63,7 @@ function registerEvent(eventId){
 
 let studentEmail = localStorage.getItem("studentEmail");
 
-fetch("http://localhost:3000/registerEvent",{
+fetch("/registerEvent",{
 
 method:"POST",
 
@@ -102,7 +102,7 @@ loadMyEvents();
 
 function loadCount(eventId){
 
-fetch("http://localhost:3000/eventCount/"+eventId)
+fetch("https://college-event-portal-hrt9.onrender.com/"+eventId)
 
 .then(res=>res.json())
 
@@ -121,7 +121,7 @@ function loadMyEvents(){
 
 let email = localStorage.getItem("studentEmail");
 
-fetch("http://localhost:3000/myEvents/"+email)
+fetch("https://college-event-portal-hrt9.onrender.com/"+email)
 
 .then(res=>res.json())
 

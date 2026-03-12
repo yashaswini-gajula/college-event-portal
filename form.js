@@ -14,7 +14,7 @@ function submitEvent() {
         return;
     }
 
-    fetch("http://localhost:3000/addEvent", {
+    fetch("https://college-event-portal-hrt9.onrender.com", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

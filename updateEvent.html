@@ -13,7 +13,7 @@ Manage your club events here. You can edit event details or delete events that a
 </p>
     <ul id="eventList"></ul>
     <script>
-fetch("http://localhost:3000/getEvents")
+fetch("https://college-event-portal-hrt9.onrender.com/getEvents")
 .then(res => res.json())
 .then(events => {
     let list = document.getElementById("eventList");
@@ -39,7 +39,7 @@ function editEvent(index) {
 function deleteEvent(index) {
     if (!confirm("Delete this event?")) return;
 
-    fetch(`http://localhost:3000/deleteEvent/${index}`, {
+    fetch(`https://college-event-portal-hrt9.onrender.com/deleteEvent/${index}`, {
         method: "DELETE"
     })
     .then(res => res.text())
