@@ -11,8 +11,8 @@ app.use(cors());
 
 /* ---------------- DATABASE CONNECTION ---------------- */
 
-mongoose.connect("mongodb://127.0.0.1:27017/collegeEvents")
-.then(()=>console.log("MongoDB Connected"))
+mongoose.connect("mongodb+srv://Yashaswini:yashu%402007@cluster0.vve2mnm.mongodb.net/collegeEvents?retryWrites=true&w=majority")
+.then(()=>console.log("MongoDB Atlas Connected"))
 .catch(err=>console.log(err));
 
 /* ---------------- STUDENT SCHEMA ---------------- */
